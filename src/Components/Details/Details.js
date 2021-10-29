@@ -7,7 +7,7 @@ import Data from '../Data/Data';
 const Details = () => {
     const [probs, setProbs] = useState([]);
     useEffect(()=>{
-        fetch('./data.json')
+        fetch('http://localhost:5000/products')
         .then(res => res.json())
         .then(data => setProbs(data))
 
@@ -16,10 +16,10 @@ const Details = () => {
 
     return (
         <div>
-            <Row xs={1} md={2} className="g-4">
+            <Row xs={1} md={3} className="g-4">
                 {
                     probs.map(para => <Data
-                    key={para._id}
+                    key={para.id}
                     data={para}
                     ></Data>)
                 }

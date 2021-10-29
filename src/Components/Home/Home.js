@@ -9,7 +9,7 @@ import './Home.css'
 const Home = () => {
     const [infos, setInfos] = useState([]);
     useEffect(() => {
-        fetch('./data.json')
+        fetch('http://localhost:5000/products')
         .then(res => res.json())
         .then(data => setInfos(data))
     }, [])
@@ -61,10 +61,10 @@ const Home = () => {
 
             <div>
                 <div className="show-cards row">
-                    <Row xs={1} md={2} className="g-4">
+                    <Row xs={1} md={3} className="g-4">
                         {
                         infos.slice(0,6).map(info => <Body 
-                            key= {info._id}
+                            key= {info.id}
                             info={info}                                                    
                             ></Body>)
                         }                            
