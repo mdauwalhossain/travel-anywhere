@@ -1,0 +1,31 @@
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import './Header.css'
+
+
+
+const Header = () => {
+
+  
+
+
+    return (
+        <div className="menu-bar">
+             <Navbar bg="dark" variant="dark">
+                    <Container>
+                    <Navbar.Brand className="bg-success px-2" to="/home"><img src="https://shinetheme.com/travelerdata/solotour/wp-content/uploads/2020/04/Solo.png" alt="" /></Navbar.Brand>
+                        <Nav className="links me-center ">
+                            <NavLink to="/home">Home</NavLink>
+                            <NavLink to="/details">Details</NavLink>
+                            <NavLink to="/offers">Offers</NavLink>
+                            <NavLink to="/contact">Contact Us</NavLink>
+                            <NavLink to="/login">Login</NavLink>
+                        </Nav>
+                    </Container>
+                </Navbar>    
+    
+        </div>
+    );
+};
+
+export default Header;
