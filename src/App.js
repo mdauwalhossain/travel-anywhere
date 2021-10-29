@@ -8,6 +8,7 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import NotFound from './Components/NotFound/NotFound';
 import Offers from './Components/Offers/Offers';
+import Register from './Components/Register/Register';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Header></Header>
         <Switch>
           <Route exact path="/">
+            <Home></Home>
           </Route>
           <Route exact path="/home">
             <Home></Home>
@@ -31,6 +33,9 @@ function App() {
           </Route>
           <Route exact path="/login">
             <Login></Login>
+          </Route>
+          <Route exact path="/register">
+            <Register></Register>
           </Route>
           <Route exact path="*">
             <NotFound></NotFound>

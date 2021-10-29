@@ -1,12 +1,13 @@
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import useFirebase from '../Hooks/useFirebase';
 import './Header.css'
 
 
 
 const Header = () => {
 
-  
+    const {user, logOut} =useFirebase();
 
 
     return (
@@ -19,7 +20,13 @@ const Header = () => {
                             <NavLink to="/details">Details</NavLink>
                             <NavLink to="/offers">Offers</NavLink>
                             <NavLink to="/contact">Contact Us</NavLink>
-                            <NavLink to="/login">Login</NavLink>
+                            
+                            { 
+                            user.displayName?
+                            <button className="bg-info" onClick={logOut}>Log out</button>
+                            :
+                            <NavLink to="/login">Login</NavLink>}
+                             <span style={{color:'goldenrod', padding: '5px'}}>{user.displayName}</span>
                         </Nav>
                     </Container>
                 </Navbar>    

@@ -1,9 +1,9 @@
-.menu-bar{
+/* .menu-bar{
     background-color: white;
     margin-bottom: 30px;
     padding-bottom: 20px; 
  
-}
+} */
 
 .menu-bar img{
     padding-bottom: 10px;
@@ -11,9 +11,10 @@
 
 .menu-bar .links a{
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: 700;
     margin-left: 30px;
+    padding: 5px;
   
 
 }
