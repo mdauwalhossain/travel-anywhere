@@ -1,19 +1,23 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Contact from './Components/Contact/Contact';
+import AuthProvider from './Components/context/AuthProvider';
 import Details from './Components/Details/Details';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
+import MyOrder from './Components/MyOrder/MyOrder';
 import NotFound from './Components/NotFound/NotFound';
 import Offers from './Components/Offers/Offers';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Register from './Components/Register/Register';
 
 function App() {
   return (
     <div className="App">
-      <Router>
+     <AuthProvider>
+     <Router>
         <Header></Header>
         <Switch>
           <Route exact path="/">
@@ -21,6 +25,9 @@ function App() {
           </Route>
           <Route exact path="/home">
             <Home></Home>
+          </Route>
+          <Route exact path="/order">
+            <MyOrder></MyOrder>
           </Route>
           <Route exact path="/details">
             <Details></Details>
@@ -31,9 +38,9 @@ function App() {
           <Route exact path="/contact">
             <Contact></Contact>
           </Route>
-          <Route exact path="/login">
+          <PrivateRoute exact path="/login">
             <Login></Login>
-          </Route>
+          </PrivateRoute>
           <Route exact path="/register">
             <Register></Register>
           </Route>
@@ -43,6 +50,7 @@ function App() {
         </Switch>
         <Footer></Footer>
       </Router>
+     </AuthProvider>
     </div>
   );
 }

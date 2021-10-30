@@ -16,7 +16,8 @@ const Header = () => {
                     <Container>
                     <Navbar.Brand className="bg-success px-2" to="/home"><img src="https://shinetheme.com/travelerdata/solotour/wp-content/uploads/2020/04/Solo.png" alt="" /></Navbar.Brand>
                         <Nav className="links me-center ">
-                            <NavLink to="/home">Home</NavLink>
+                            <NavLink to="/home">Home</NavLink>                            
+                            <NavLink to="/order">My Order</NavLink>                            
                             <NavLink to="/details">Details</NavLink>
                             <NavLink to="/offers">Offers</NavLink>
                             <NavLink to="/contact">Contact Us</NavLink>

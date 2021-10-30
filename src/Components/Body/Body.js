@@ -14,7 +14,7 @@ const Body = (props) => {
                 <Card.Text className="text-info">
                     <h6>Price: {price} (Yearly)</h6>
                     <p><small>{details}</small></p>
-                    <Link to="/details" style={{textDecoration: 'none' , px: '5'}} className=" border border-3 px-3 border-info bg-warning rounded-pill">Explore More</Link>
+                    <Link to="/order" style={{textDecoration: 'none' , px: '5'}} className=" border border-3 px-3 border-info bg-warning rounded-pill">Explore More</Link>
                 </Card.Text>
                 </Card.Body>
             </Card>

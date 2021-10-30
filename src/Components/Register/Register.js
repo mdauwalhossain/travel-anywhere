@@ -4,27 +4,28 @@ import { Link } from 'react-router-dom';
 import { useHistory, useLocation } from "react-router";
 import useFirebase from "../Hooks/useFirebase";
 
+
 const Register = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const {emaill} = useFirebase();
+    // const [email, setEmail] = useState('');
+    // const [password, setPassword] = useState('');
+    // const {emaill} = useFirebase();
     const {signInUsingGoogle} = useFirebase();
     
 
     const auth = getAuth();
 
-    const handleEmailChange = e => {
-        setEmail(e.target.value);
-    }
+    // const handleEmailChange = e => {
+    //     setEmail(e.target.value);
+    // }
 
-    const handlePasswordChange = e =>{
-        setPassword(e.target.value)
-    }
+    // const handlePasswordChange = e =>{
+    //     setPassword(e.target.value)
+    // }
 
-    const handleRegistration = (e) =>{
-        e.preventDefault();
-       emaill(email, password)    
-    }
+    // const handleRegistration = (e) =>{
+    //     e.preventDefault();
+    //    emaill(email, password)    
+    // }
 
     let history = useHistory();
     let location = useLocation();
@@ -33,9 +34,9 @@ const Register = () => {
     return (
         <div className="reg">
             <div>
-                <h2>Register</h2>
-                <h4>Create the Account</h4>
-                <form onSubmit={handleRegistration}>
+                <h2 className="text-success">Register</h2>
+                {/* <h4>Create the Account</h4> */}
+                {/* <form onSubmit={handleRegistration}>
                     <input type="text" name="" id="" placeholder="Name"/>
                     <br /><br />
                     <input onBlur={handleEmailChange} type="email" name="" id="" placeholder="Your Email" />
@@ -44,7 +45,7 @@ const Register = () => {
                     <br /><br />
                    
                     <input className="btn btn-success ms-1" type="Submit" value="Submit" />
-                </form>
+                </form> */}
                 <p>Already have an account? <Link to="/login" style={{ textDecoration: 'none', color:"red"}}>Login</Link> </p>
                 <button onClick={
                     () => signInUsingGoogle(history, from)} className="btn btn-primary m-2">Google Sign in</button>

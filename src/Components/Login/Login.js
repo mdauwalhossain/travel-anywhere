@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
 import { useHistory, useLocation } from "react-router";
 import useFirebase from "../Hooks/useFirebase";
 
@@ -9,8 +8,8 @@ import useFirebase from "../Hooks/useFirebase";
  const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState(''); 
-  const { signInUsingGoogle} = useFirebase(); 
-  const {emaill} = useFirebase();
+  const {emaill,signInUsingGoogle} = useFirebase();
+  // const { signInUsingGoogle} = useFirebase(); 
 
   // const auth = getAuth();
 
@@ -36,7 +35,7 @@ const handlePasswordChange = e =>{
 
   return (
     <div className="log">
-      <h1 className="text-success">Wanna something more...</h1>
+      <h1 className="text-success">Login Page</h1>
       <div className=" ">
         
         <div className="col-md-12">
@@ -75,7 +74,7 @@ const handlePasswordChange = e =>{
                 Google sign in
               </button>
              
-              <p className="">New in Dental Care?? <Link to="/register" style={{ textDecoration: 'none', color:"red"}}>Register Here</Link> </p>
+              <p className="">New in this site ?? <Link to="/register" style={{ textDecoration: 'none', color:"red"}}>Register Here</Link> </p>
             </div>
           </div>
         </div>
