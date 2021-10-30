@@ -42,9 +42,9 @@ function App() {
           <Route exact path="/users">
             <Users></Users>
           </Route>
-          <PrivateRoute exact path="/login">
+          <Route exact path="/login">
             <Login></Login>
-          </PrivateRoute>
+          </Route>
           <Route exact path="/register">
             <Register></Register>
           </Route>

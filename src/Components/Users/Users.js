@@ -12,13 +12,25 @@ const Users = () => {
 
     // Delete user
     const handleDeleteUser = id =>{
-        console.log(id)
-         const url = `https://cryptic-springs-81955.herokuapp.com/products/${id}`;
-       console.log(url);
+        // console.log(id)
+        const proceed = window.confirm('Are you want to Delete ??')
+        if(proceed){
+            const url = `http://localhost:5000/products/${id}`;
+    //    console.log(url);
         fetch(url, {
             method: 'DELETE'
         })
-        .then()
+        .then(res => res.json())
+        .then(data => {
+            if(data.deleteCount > 0){
+                alert('Delete item successfully');
+                const remainingUsers = users.filter(user => user._id !== id)
+                setUsers(remainingUsers);
+            }
+        })
+        }
+         
+        
 
     }
 

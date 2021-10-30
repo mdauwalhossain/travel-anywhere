@@ -8,12 +8,16 @@ import useFirebase from "../Hooks/useFirebase";
  const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState(''); 
-  const {emaill,signInUsingGoogle} = useFirebase();
+  const {signInUsingGoogle} = useFirebase();
   // const { signInUsingGoogle} = useFirebase(); 
 
   // const auth = getAuth();
 
   
+  let history = useHistory();
+  let location = useLocation();
+  let { from } = location.state || { from: { pathname: "/" } };
+
   const handleEmailChange = e => {
     setEmail(e.target.value);
 }
@@ -25,12 +29,11 @@ const handlePasswordChange = e =>{
 
   const handleLogIn = (e) =>{
     e.preventDefault();
-   emaill(email, password)
+  //  (email, password, history, from)
+   
   }
 
-  let history = useHistory();
-    let location = useLocation();
-    let { from } = location.state || { from: { pathname: "/" } };
+ 
    
 
   return (
@@ -40,7 +43,7 @@ const handlePasswordChange = e =>{
         
         <div className="col-md-12">
           <div>
-           <form onSubmit={handleLogIn}>
+           <form onSubmit={(e)=>handleLogIn}>
            <div className="form-input mt-5">
             <h2>Login</h2>
               <input 
@@ -68,7 +71,7 @@ const handlePasswordChange = e =>{
             <div className="login-btn mt-4">
               <button
                 onClick={
-                ()=>signInUsingGoogle(history, from) }
+                ()=> signInUsingGoogle(history, from) }
                 className="btn btn-warning m-2"
               >
                 Google sign in

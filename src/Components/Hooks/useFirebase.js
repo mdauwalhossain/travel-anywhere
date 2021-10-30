@@ -1,37 +1,38 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react"
 import { useHistory } from "react-router";
-import initializeAuthentication from "../../Firebase/firebase.init";
-
+import initializeAuthentication from "../../Firebase/firebase.init"
 
 initializeAuthentication();
 
 const useFirebase = () =>{
+   
     const [user, setUser] = useState({});
     const history = useHistory();
     const auth = getAuth();
-    const googleProvider = new GoogleAuthProvider();
-
+   
+    
     const signInUsingGoogle = (history, from) =>{
+        const googleProvider = new GoogleAuthProvider();
         signInWithPopup(auth, googleProvider)
         .then(result => {
-           setUser(result.user);
+            console.log(result.user);
             history.push(from)
         })
     }
-
-    const emaill = (email, password) =>{
-        console.log(email, password)
-        createUserWithEmailAndPassword(auth, email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user)
-            history.push('/details')
+    console.log('start')
+    // const emaill = (email, password) =>{
+    //     console.log(email, password)
+    //     createUserWithEmailAndPassword(auth, email, password)
+    //     .then(result => {
+    //         const user = result.user;
+    //         console.log(user)
+    //         history.push('/details')
             
-        })
-
+    //     })
+        console.log('end');
         
-    }
+    // }
    
     const logOut = () =>{
         signOut(auth)
@@ -47,17 +48,17 @@ const useFirebase = () =>{
               setUser(user)
              
             }
-            // else{
-            //     setUser({})
-            // }
+            else{
+                setUser({})
+            }
           });
     },[])
 
     return{
         user,
         signInUsingGoogle,
-        logOut,
-        emaill
+        logOut
+        
 
     }
 
