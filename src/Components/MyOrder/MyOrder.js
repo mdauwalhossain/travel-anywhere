@@ -1,34 +1,40 @@
-import axios from 'axios';
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useRef } from 'react';
 import './MyOrder.css';
 
-const MyOrder = () => {
+const MyOrder = () => { 
+    const nameRef = useRef();
+    const emailRef = useRef();
+    const handleAddUser = e => {
+      const name = nameRef.current.value;
+      const email = emailRef.current.value;
+      const newUser = {name, email};
 
-    const { register, handleSubmit, reset } = useForm();
+      fetch('http://localhost:5000/products', {
+        method: 'POST',
+        headers:{
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(newUser)
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.insertedId){
+            alert ('You successfully fill up the form')
+            e.target.reset();
+        }
+    })
 
-    const onSubmit = data => {
-        console.log(data);
-
-        axios.post('http://localhost:5000/services', data)
-            .then(res => {
-                if (res.data.insertedId) {
-                    alert('added successfully');
-                    reset();
-                }
-            })
+      e.preventDefault();
     }
-    
     return (
         <div>
             <div className="add-service">
                 <br />
                 <h2>Fill up the Form, please</h2> <br />
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <input {...register("name", { required: true, maxLength: 20 })} placeholder="Name" />
-                        <textarea {...register("description")} placeholder="Description" />
-                        <input type="number" {...register("price")} placeholder="Price" />
-                        <input {...register("img")} placeholder="Image URL" />
+
+                    <form onSubmit={handleAddUser}>                       
+                        <input type="text" placeholder="Name" ref={nameRef} />
+                        <input type="email" name="" id="" placeholder="Email" ref={emailRef}/>                        
                         <input type="submit" />
                     </form>
             </div>

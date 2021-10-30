@@ -12,6 +12,7 @@ import NotFound from './Components/NotFound/NotFound';
 import Offers from './Components/Offers/Offers';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Register from './Components/Register/Register';
+import Users from './Components/Users/Users';
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route exact path="/contact">
             <Contact></Contact>
+          </Route>
+          <Route exact path="/users">
+            <Users></Users>
           </Route>
           <PrivateRoute exact path="/login">
             <Login></Login>
