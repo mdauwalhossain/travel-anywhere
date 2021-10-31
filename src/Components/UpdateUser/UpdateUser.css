@@ -1,0 +1,17 @@
+.update{    
+    background-image: linear-gradient(to right top, #6baed1, #6aacdf, #76a7ea, #8ca0f1, #a997f2, #af91f1, #b68bf0, #be84ed, #ac83f1, #9782f5, #7f81f8, #5f81fb);
+}
+
+.update h1{
+    color:rgba(255, 0, 0, 0.644)
+}
+.update ul{
+    list-style-type: none;
+   
+}
+
+.update button{
+    margin-bottom: 10px;
+    border-style: none;
+    border-radius: 8px ;
+}

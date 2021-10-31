@@ -1,8 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import './User.css';
+import './UpdateUser.css'
 
-const Users = () => {
+const UpdateUser = () => {
+    // const {id} = useParams();
+    // const [user, setUser] = useState({});
+
+    // useEffect(() => {
+    //     const url = `http://localhost:5000/products/${id}`;
+    //     fetch(url)
+    //     .then( res => res.json())        
+    //     .then(data =>setUser(data))
+    // },[])
+
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -36,22 +47,27 @@ const Users = () => {
     }
 
     return (
-        <div className="user">
-           
+        <div className="update">
+            {/* <h1>Update user {user.name}</h1>
+            <p>{id}</p> */}
+            
+            <h1 className="text-primary">Available users are: {users.length}</h1>
             <ul>
                 {
                     users.map(user => <li
                     key={user._id}>
-                       <h4 className="bg-dark text-warning">Tour Details</h4>  <br /> 
+                       <h4 className="bg-dark text-light">Tour Details</h4>  <br /> 
                           <h6>{user.name}</h6>                        
                        <p>{user.details}</p>
-                       <Link to={`/users/update/${user._id}`}><button>Cancel Order</button></Link>
-                    
+                      
+                      <button onClick={() => handleDeleteUser(user._id)}>Delete Order</button> <br />
+
                     </li> )
                 }
             </ul>
+
         </div>
     );
 };
 
-export default Users;
+export default UpdateUser;
