@@ -57,11 +57,11 @@ const Home = () => {
                 </Carousel>
                 </div>
                 
-                <h2 className="mt-5 text-light bg-dark">Take a Service</h2> <br />
+                <h1 className="text-light">Take a Service</h1> 
 
-                <div>
+                <div className="cards">
                     <div className="show-cards row">
-                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="row row-cols-1 row-cols-md-3 ">
                             {
                             infos.slice(0,6).map(info => <Body 
                                 key= {info.id}
@@ -81,7 +81,7 @@ const Home = () => {
                     <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Knowing something before Travelling</h4>
-                        <p class="card-text"> <span>Travel is the movement of people between distant geographical locations. Travel can be done by foot, bicycle, automobile, train, boat, bus, airplane, ship or other means, with or without luggage, and can be one way or round trip. Travel can also include relatively short stays between successive movements, as in the case of tourism.Travel by water often provided more comfort and speed than land-travel, at least until the advent of a network of railways in the 19th century. Travel for the purpose of tourism is reported to have started around this time when people began to travel for fun as travel was no longer a hard and challenging task.In one life we need to adventure and explore myself. Travel can be done by foot, bicycle, automobile, train, boat, bus, airplane, ship with or without luggage, and can be one way or round trip.[1] Travel can also include relatively short stays between successive movements, as in the case of tourism. </span> </p>
+                        <p class="card-text"> <span>Travel is the movement of people between distant geographical locations. Travel can be done by foot, bicycle, automobile, train, boat, bus, airplane, ship or other means, with or without luggage, and can be one way or round trip. Travel can also include relatively short stays between successive movements, as in the case of tourism.Travel by water often provided more comfort and speed than land-travel, at least until the advent of a network of railways in the 19th century. Travel for the purpose of tourism is reported to have started around this time when people began to travel for fun as travel was no longer a hard and challenging task.In one life we need to adventure and explore myself. Travel can be done by foot, bicycle, automobile, train, boat, bus, airplane, ship with or without luggage, and can be one way or round trip.[1] make you more happy Travel can also include relatively short stays between successive movements, as in the case of tourism. </span> </p>
                     </div>
                     <img src="https://shinetheme.com/travelerdata/solotour/wp-content/uploads/2020/04/Group-296-2.png"/>
                     
@@ -110,12 +110,13 @@ const Home = () => {
                     <p class="card-text">Travel is the movement of people between distant geographical locations. Travel can be done by foot, bicycle, automobile, train, boat, bus, airplane, ship or other means, with or without luggage, and can be one way or round trip.</p>
                     <h4 class="card-title">Knowing something before Travelling</h4>
                     <h4>Why choose us</h4>
-                    <h6>1. BOOKING WITH SPREAD PAYMENTS</h6>
-                    <h6>2. SLEEP & TRAVEL IN COMFORT</h6>
-                    <h6>3. FULLY LICENSED TOUR OPERATOR</h6>
+                    <h6>1. BOOKING WITH <br /> SPREAD PAYMENTS</h6>
+                    <h6>2. SLEEP & TRAVEL <br /> IN COMFORT</h6>
+                    <h6>3. FULLY LICENSED <br />
+                         TOUR OPERATOR</h6>
                 </div>
             </div>
-        </div>
+        </div> <br />
         {/* section 2 END */}
     </div>
     );

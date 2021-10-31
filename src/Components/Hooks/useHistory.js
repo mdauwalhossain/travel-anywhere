@@ -2,8 +2,6 @@ import React from 'react';
 import { useHistory } from "react-router";
 import Details from '../Details/Details';
 
-
-
 function App()
 {
     let history = useHistory ();

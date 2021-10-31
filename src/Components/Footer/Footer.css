@@ -7,3 +7,9 @@
     width: 100%;
     color: white;
   }
+
+  .footer a{
+    margin-right: 30px;
+    color: gold;
+    font-size: x-large;
+  }
