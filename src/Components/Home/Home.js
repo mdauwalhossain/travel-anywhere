@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Row } from 'react-bootstrap';
 import Body from '../Body/Body';
 import './Home.css'
 
@@ -61,7 +61,9 @@ const Home = () => {
 
                 <div className="cards">
                     <div className="show-cards row">
-                        <div class="row row-cols-1 row-cols-md-3 ">
+                        <div className="row row-cols-1 row-cols-md-3">
+
+                        {/* <Row xs={1} md={2} className="g-2">  </Row> */}
                             {
                             infos.slice(0,6).map(info => <Body 
                                 key= {info.id}
