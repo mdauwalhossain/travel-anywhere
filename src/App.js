@@ -18,42 +18,46 @@ function App() {
   return (
     <div className="App">
      <AuthProvider>
-     <Router>
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route exact path="/home">
-            <Home></Home>
-          </Route>
-          <Route exact path="/order">
-            <MyOrder></MyOrder>
-          </Route>
-          <Route exact path="/details">
-            <Details></Details>
-          </Route>
-          <Route exact path="/offers">
-            <Offers></Offers>
-          </Route>
-          <Route exact path="/contact">
-            <Contact></Contact>
-          </Route>
-          <Route exact path="/users">
-            <Users></Users>
-          </Route>
-          <Route exact path="/login">
-            <Login></Login>
-          </Route>
-          <Route exact path="/register">
-            <Register></Register>
-          </Route>
-          <Route exact path="*">
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
+      <Router>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route exact path="/home">
+              <Home></Home>
+            </Route>
+            <PrivateRoute exact path="/order">
+              <MyOrder></MyOrder>
+            </PrivateRoute>
+
+            <PrivateRoute exact path="/details">
+              <Details></Details>
+            </PrivateRoute>
+
+            <Route exact path="/offers">
+              <Offers></Offers>
+            </Route>
+            <Route exact path="/contact">
+              <Contact></Contact>
+            </Route>
+            <Route exact path="/users">
+              <Users></Users>
+            </Route>
+
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+
+            <Route exact path="/register">
+              <Register></Register>
+            </Route>
+            <Route exact path="*">
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
      </AuthProvider>
     </div>
   );

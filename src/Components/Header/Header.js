@@ -18,8 +18,8 @@ const Header = () => {
                         <Nav className="links me-center ">
                             <NavLink to="/home">Home</NavLink>                            
                             <NavLink to="/order">My Order</NavLink>                            
-                            <NavLink to="/details">Details</NavLink>
                             <NavLink to="/offers">Offers</NavLink>
+                            <NavLink to="/details">Details</NavLink>
                             <NavLink to="/contact">Contact Us</NavLink>
                             <NavLink to="/users">Users</NavLink>
                             

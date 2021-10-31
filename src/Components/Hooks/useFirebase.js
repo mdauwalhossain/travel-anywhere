@@ -6,33 +6,28 @@ import initializeAuthentication from "../../Firebase/firebase.init"
 initializeAuthentication();
 
 const useFirebase = () =>{
-   
     const [user, setUser] = useState({});
     const history = useHistory();
     const auth = getAuth();
-   
-    
+    const googleProvider = new GoogleAuthProvider();
+
     const signInUsingGoogle = (history, from) =>{
-        const googleProvider = new GoogleAuthProvider();
         signInWithPopup(auth, googleProvider)
         .then(result => {
             console.log(result.user);
             history.push(from)
         })
     }
-    console.log('start')
-    // const emaill = (email, password) =>{
-    //     console.log(email, password)
-    //     createUserWithEmailAndPassword(auth, email, password)
-    //     .then(result => {
-    //         const user = result.user;
-    //         console.log(user)
-    //         history.push('/details')
-            
-    //     })
-        console.log('end');
-        
-    // }
+
+    const emaill = (email, password) =>{
+        console.log(email, password)
+        createUserWithEmailAndPassword(auth, email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user)
+            history.push('/details')            
+        })        
+    }
    
     const logOut = () =>{
         signOut(auth)
@@ -57,8 +52,8 @@ const useFirebase = () =>{
     return{
         user,
         signInUsingGoogle,
-        logOut
-        
+        logOut,
+        emaill
 
     }
 
