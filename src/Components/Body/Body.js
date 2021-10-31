@@ -12,7 +12,7 @@ const Body = (props) => {
                 <Card.Body className="">
                 <Card.Title className="bg-red-500 text-info bg-dark">Category: {name}</Card.Title>
                 <Card.Text className="text-info">
-                    <h6>Price: {price} (Yearly)</h6>
+                    <h6>Price: {price}</h6>
                     <p><small>{details}</small></p>
                     <Link to="/order" style={{textDecoration: 'none' , px: '5'}} className=" border border-3 px-3 border-info bg-warning rounded-pill">Explore More</Link>
                 </Card.Text>

@@ -9,7 +9,7 @@ const MyOrder = () => {
       const email = emailRef.current.value;
       const newUser = {name, email};
 
-      fetch('http://localhost:5000/products', {
+      fetch('https://cryptic-springs-81955.herokuapp.com/products', {
         method: 'POST',
         headers:{
             'content-type': 'application/json'
@@ -33,7 +33,10 @@ const MyOrder = () => {
                 <h2>Fill up the Form, please</h2> <br />
 
                     <form onSubmit={handleAddUser}>                       
+                        <input type="text" placeholder="Image URL" ref={nameRef} />
                         <input type="text" placeholder="Name" ref={nameRef} />
+                        <input type="text" placeholder="Price" ref={nameRef} />
+                        <input type="text" placeholder="Details" ref={nameRef} />
                         <input type="email" name="" id="" placeholder="Email" ref={emailRef}/>                        
                         <input type="submit" />
                     </form>

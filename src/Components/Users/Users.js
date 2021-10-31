@@ -22,9 +22,9 @@ const Users = () => {
         })
         .then(res => res.json())
         .then(data => {
-            if(data.deleteCount > 0){
+            if(data.deletedCount > 0 ) {
                 alert('Delete item successfully');
-                const remainingUsers = users.filter(user => user._id !== id)
+                const remainingUsers = users.filter(user => user._id !== id);
                 setUsers(remainingUsers);
             }
         })
