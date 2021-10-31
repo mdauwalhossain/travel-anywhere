@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './User.css';
 
 const Users = () => {
     const [users, setUsers] = useState([]);
@@ -29,22 +30,21 @@ const Users = () => {
             }
         })
         }
-         
-        
 
     }
 
     return (
-        <div>
-            <h1>Users are:{users.length}</h1>
+        <div className="user">
+            <h1>Available users are: {users.length}</h1>
             <ul>
                 {
                     users.map(user => <li
                     key={user._id}>
-                       <h6>Tour Details: {user.name}</h6> 
-                       &
-                       <h6>{user.email}</h6>
-                       <button onClick={() => handleDeleteUser(user._id)}>Cancel Order</button>
+                       <h4 className="bg-dark text-light">Tour Details</h4>  <br /> 
+                          <h6>{user.name}</h6> 
+                       
+                       <p>{user.details}</p>
+                       <button onClick={() => handleDeleteUser(user._id)}>Cancel Order</button> <br />
 
                     </li> )
                 }

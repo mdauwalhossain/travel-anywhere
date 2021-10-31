@@ -28,6 +28,10 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
+            {/* <img src="https://image.shutterstock.com/image-vector/contact-us-call-symbols-social-260nw-1193163277.jpg" alt="" /> */}
+            <img src="https://www.advertisementshout.com/wp-content/uploads/2020/10/Contact-Us-advertisement-shout.jpg" alt="" />
+            
+
         </div>
     );
 };

@@ -30,7 +30,7 @@ const MyOrder = () => {
         <div>
             <div className="add-service">
                 <br />
-                <h2>Fill up the Form, please</h2> <br />
+                <h2 className="">Fill up the Form, please</h2> <br />
 
                     <form onSubmit={handleAddUser}>                       
                         <input type="text" placeholder="Image URL" ref={nameRef} />
@@ -41,6 +41,7 @@ const MyOrder = () => {
                         <input type="submit" />
                     </form>
             </div>
+            <img src="https://t3.ftcdn.net/jpg/02/80/01/60/360_F_280016022_rUaaDfYsSOvSgeHxN5p33p2CgxfOqaxX.jpg" alt="" />
         </div>
     );
 };

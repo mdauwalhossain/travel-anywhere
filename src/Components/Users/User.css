@@ -1,0 +1,17 @@
+.user{    
+    background-color: rgba(0, 206, 209, 0.459);
+}
+
+.user h1{
+    color:rgba(255, 0, 0, 0.644)
+}
+.user ul{
+    list-style-type: none;
+   
+}
+
+.user button{
+    margin-bottom: 10px;
+    border-style: none;
+    border-radius: 8px ;
+}

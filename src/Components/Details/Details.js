@@ -25,6 +25,10 @@ const Details = () => {
                 }
                 
             </Row>
+
+
+
+            
         </div>
     );
 };

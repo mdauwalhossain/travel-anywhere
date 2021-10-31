@@ -3,7 +3,7 @@ import React from 'react';
 const Offers = () => {
     return (
         <div>
-           <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div class="col">
                     <div class="card">
                     <img src="https://image.shutterstock.com/image-photo/three-beautiful-fashion-girls-sitting-260nw-404770951.jpg"/>
