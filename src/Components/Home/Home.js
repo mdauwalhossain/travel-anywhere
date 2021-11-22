@@ -62,8 +62,6 @@ const Home = () => {
                 <div className="cards">
                     <div className="show-cards row">
                         <div className="row row-cols-1 row-cols-md-3">
-
-                        {/* <Row xs={1} md={2} className="g-2">  </Row> */}
                             {
                             infos.slice(0,6).map(info => <Body 
                                 key= {info.id}
